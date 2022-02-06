@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "043f79c3-603b-42d2-a520-90ddf6fe89e2": {
+      "ProjectGuid": "043f79c3-603b-42d2-a520-90ddf6fe89e2",
+      "DisplayName": "ReservasCore6",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "85719154-54d0-4563-bf3d-dda55ee75e07": {
+      "ProjectGuid": "85719154-54d0-4563-bf3d-dda55ee75e07",
+      "DisplayName": "PruebasUnitarias",
+      "ColorIndex": 1
+    },
+    "9f6bc75f-910d-4ba4-95ea-98ffa826f94d": {
+      "ProjectGuid": "9f6bc75f-910d-4ba4-95ea-98ffa826f94d",
+      "DisplayName": "Unitarias",
+      "ColorIndex": 2
+    },
+    "a046f65b-a425-471e-8440-22bcb49dad32": {
+      "ProjectGuid": "a046f65b-a425-471e-8440-22bcb49dad32",
+      "DisplayName": "UnitTest",
+      "ColorIndex": 3
+    },
+    "97b3fccf-3f62-4bc3-ba4a-8fb3ad88a434": {
+      "ProjectGuid": "97b3fccf-3f62-4bc3-ba4a-8fb3ad88a434",
+      "DisplayName": "ReservasCore6.NUnitTest",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

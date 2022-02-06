@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservasCore6", "ReservasCore6\ReservasCore6.csproj", "{043F79C3-603B-42D2-A520-90DDF6FE89E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservasCore6.NUnitTest", "ReservasCore6.NUnitTest\ReservasCore6.NUnitTest.csproj", "{97B3FCCF-3F62-4BC3-BA4A-8FB3AD88A434}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{043F79C3-603B-42D2-A520-90DDF6FE89E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043F79C3-603B-42D2-A520-90DDF6FE89E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043F79C3-603B-42D2-A520-90DDF6FE89E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043F79C3-603B-42D2-A520-90DDF6FE89E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B3FCCF-3F62-4BC3-BA4A-8FB3AD88A434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B3FCCF-3F62-4BC3-BA4A-8FB3AD88A434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B3FCCF-3F62-4BC3-BA4A-8FB3AD88A434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B3FCCF-3F62-4BC3-BA4A-8FB3AD88A434}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A640E992-EBC1-4D5E-B160-FC68F9F227DF}
+	EndGlobalSection
+EndGlobal
