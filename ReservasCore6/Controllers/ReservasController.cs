@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ReservasCore6.Data;
 using ReservasCore6.Models;
+using ReservasCore6.Models.Utils;
 
 namespace ReservasCore6.Controllers
 {
@@ -32,15 +33,17 @@ namespace ReservasCore6.Controllers
         }
 
         [HttpGet("{FCheckIn}/{FCheckOut}")]
-        public async Task<ActionResult<List<Reserva>>> GetReserva(DateTime FCheckIn, DateTime FCheckOut)
+        public async Task<ActionResult<List<Reserva>>> GetReserva(DateTime FCheckIn, DateTime FCheckOut, [FromQuery] Pagination paginacion)
         {
             _logger.LogInformation($"Obteniedo reservas entre las fechas {FCheckIn} y {FCheckOut}");
             // Esta consulta trae el data completa del usuario y hotel, se se desea solo traer el email se puede armar un modelo 
             // especifico para que se vea organizada la data
             var reserva = await _context.Reserva.Include(x => x.Usuario)
                                                 .Include(x => x.Hotel)
+                                                .Where(x => x.Estado == true)
                                                 .OrderByDescending(x => x.FechaEntrada >= FCheckIn &&
-                                                x.FechaSalida <= FCheckOut && x.Estado == true).Take(1000).ToListAsync(); 
+                                                x.FechaSalida <= FCheckOut).Skip((paginacion.PageNumber -1) * paginacion.PageSize)
+                                                .Take(paginacion.PageSize).ToListAsync(); 
             if (reserva == null)
             {
                 _logger.LogWarning($"No se encontro data relacionada entre las fechas {FCheckIn} y {FCheckOut}");

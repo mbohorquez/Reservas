@@ -6,6 +6,7 @@ using Moq;
 using NUnit.Framework;
 using ReservasCore6.Data;
 using ReservasCore6.Models;
+using ReservasCore6.Models.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -69,9 +70,10 @@ namespace ReservasCore6.Controllers
         [Test]
         public async Task ConsultaReservaFechas_Return_Ok()
         {
+            var paginacion = new Pagination();
             // se realiza peticicion
             Task<ActionResult<List<Reserva>>> task = _context.GetReserva(_reservasNUnit.FirstOrDefault().FechaEntrada,
-                                                                         _reservasNUnit.LastOrDefault().FechaSalida);
+                                                                         _reservasNUnit.LastOrDefault().FechaSalida, paginacion);
             // se espera tarea
             dynamic result = await task;
             // se verifica si el resultado es el deseado
