@@ -57,6 +57,22 @@ namespace ReservasCore6.Controllers
         {
             try
             {
+                if(reserva.FechaEntrada > reserva.FechaSalida)
+                {
+                    _logger.LogError("La fecha de entrada no puede ser mayor que la de salida.");
+                    return BadRequest("La fecha de entrada no puede ser mayor que la de salida.");
+                }
+                var habitacionDisponible = await _context.Reserva.Where(x => x.FechaEntrada >= reserva.FechaEntrada  
+                                                                        && x.FechaEntrada <= reserva.FechaSalida
+                                                                        && x.Estado == true 
+                                                                        && x.NumeroHabitacion == reserva.NumeroHabitacion 
+                                                                        && x.IdHotel == reserva.IdHotel).ToListAsync();
+                if(habitacionDisponible.Count > 0)
+                {
+                    _logger.LogError($"Para la fecha de entrada {reserva.FechaEntrada} y numero de habitacion {reserva.NumeroHabitacion} ya se encuentra reservado");
+                    return BadRequest($"Para la fecha de entrada {reserva.FechaEntrada} y numero de habitacion {reserva.NumeroHabitacion} ya se encuentra reservado");
+                }
+
                 _logger.LogInformation("Realizando guardado de reserva");
                 var reservaContext = new Reserva();
                 reservaContext.IdUsuario = reserva.IdUsuario;
