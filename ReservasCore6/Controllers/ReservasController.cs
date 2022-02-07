@@ -40,7 +40,7 @@ namespace ReservasCore6.Controllers
             var reserva = await _context.Reserva.Include(x => x.Usuario)
                                                 .Include(x => x.Hotel)
                                                 .OrderByDescending(x => x.FechaEntrada >= FCheckIn &&
-                                                x.FechaSalida <= FCheckOut).Take(1000).ToListAsync(); 
+                                                x.FechaSalida <= FCheckOut && x.Estado == true).Take(1000).ToListAsync(); 
             if (reserva == null)
             {
                 _logger.LogWarning($"No se encontro data relacionada entre las fechas {FCheckIn} y {FCheckOut}");
